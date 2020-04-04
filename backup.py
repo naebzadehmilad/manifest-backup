@@ -9,11 +9,11 @@ def backup():
         exit(1)
     for i in range(len(namespaces)):
         for j in range(len(resources)):
-            if not os.path.exists('{0},{1}/{2}'.format(dir[0],namespaces[i],resources[j])):
+            if not os.path.exists('{0}/{1}/{2}'.format(dir[0],namespaces[i],resources[j])):
                 try:
                     os.makedirs('{0}/{1}/{2}'.format(dir[0],namespaces[i],resources[j]))
                 except:
-                    raise OSError("Can't create destination directory ('{0}/{1}/{2}')!".format(dir[0],namespaces[i],resources[j]))
+                    raise OSError("Can't create destination directory ({0}/{1}/{2})!".format(dir[0],namespaces[i],resources[j]))
 
 
 backup()
