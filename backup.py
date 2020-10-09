@@ -7,8 +7,8 @@ def backup():
     except:
         logging.error('export KUBECONFIG=$HOME/.kube/config')
         exit(1)
-    for i in range(len(namespaces)):
-        for j in range(len(resources)):
+    for i in range(len(conf.namespaces)):
+        for j in range(len(conf.resources)):
             if not os.path.exists('{0}/{1}/{2}'.format(dir[0],conf.namespaces[i],conf.resources[j])):
                 try:
                     os.makedirs('{0}/{1}/{2}'.format(dir[0],conf.namespaces[i],conf.resources[j]))
